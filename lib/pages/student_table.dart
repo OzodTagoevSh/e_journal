@@ -1,5 +1,8 @@
+import 'package:e_journal/pages/home.dart';
+import 'package:e_journal/pages/remove_student.dart';
 import 'package:e_journal/student/student.dart';
 import 'package:e_journal/student/student_info.dart';
+import 'package:e_journal/pages/add_student.dart';
 import 'package:flutter/material.dart';
 import 'package:horizontal_data_table/horizontal_data_table.dart';
 
@@ -26,6 +29,17 @@ class _StudentTableState extends State<StudentTable> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Home()));
+              },
+              child: const Icon(Icons.home),
+            ),
+          )
+        ],
         backgroundColor: Colors.green,
         title: const Text("Students Table"),
         centerTitle: true,
@@ -62,20 +76,30 @@ class _StudentTableState extends State<StudentTable> {
 
         Container(
           child: ElevatedButton(
-            onPressed: () {},
-            child: Icon(Icons.add),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => AddStudent()));
+            },
+            child: const Icon(Icons.add),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+            ),
           ),
           alignment: Alignment.bottomRight,
-          margin: EdgeInsets.only(right: 30.0, bottom: 60.0),
+          margin: const EdgeInsets.only(right: 30.0, bottom: 60.0),
         ),
 
         Container(
           child: ElevatedButton(
-            onPressed: () {},
-            child: Icon(Icons.remove),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const RemoveStudent()));
+            },
+            child: const Icon(Icons.remove),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+            ),
           ),
           alignment: Alignment.bottomRight,
-          margin: EdgeInsets.only(right: 30.0, bottom: 20.0),
+          margin: const EdgeInsets.only(right: 30.0, bottom: 20.0),
         ),
       ],
     );

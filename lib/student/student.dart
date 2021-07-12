@@ -1,139 +1,19 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/cupertino.dart';
 
 class Student {
   List<StudentInformation> _userInfo = <StudentInformation>[];
+  CollectionReference student = FirebaseFirestore.instance.collection('students');
+
+
   List<Map> students = [
     {
       'firstName': 'Ozod',
       'lastName': 'Tagoev',
-      'email': 'ozod.tagoev@gmail.com',
       'studentId': 'U1710010',
-      'major': 'CSE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
-    },
-    {
-      'firstName': 'Komron',
-      'lastName': 'Khodjaev',
-      'email': 'k.khodjaev@gmail.com',
-      'studentId': 'U1710128',
-      'major': 'ICE',
+      'email': 'ozod.tagoev@gmail.com',
+      'major': 'CSE'
     }
   ];
 
@@ -142,7 +22,7 @@ class Student {
       _userInfo.add(StudentInformation(
         firstName: students[i]['firstName'],
         lastName: students[i]['lastName'],
-        order: i+1,
+        order: i + 1,
         email: students[i]['email'],
         studentId: students[i]['studentId'],
         major: students[i]['major'],

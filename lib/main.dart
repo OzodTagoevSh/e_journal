@@ -1,18 +1,14 @@
-import 'package:e_journal/home.dart';
-import 'package:e_journal/student/student_table.dart';
+import 'package:e_journal/pages/home.dart';
+import 'package:e_journal/pages/student_table.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: StudentTable(),
-    );
-  }
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: Home(),
+  ));
 }
