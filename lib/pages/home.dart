@@ -1,4 +1,5 @@
 import 'package:e_journal/pages/student_table.dart';
+import 'package:e_journal/pages/subject.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -48,7 +49,7 @@ class _HomeState extends State<Home> {
                   backgroundColor: MaterialStateProperty.all<Color>(Colors.teal),
                 ),
                 onPressed: () {
-
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const SubjectInfo()));
                 },
                 child: const Text('Grades', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),)),
           ),
