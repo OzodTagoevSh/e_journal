@@ -1,12 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter/cupertino.dart';
 
 class Student {
   List<StudentInformation> _userInfo = <StudentInformation>[];
-  CollectionReference student = FirebaseFirestore.instance.collection('students');
-
-
   List<Map> students = [
     {
       'firstName': 'Ozod',
@@ -14,6 +8,118 @@ class Student {
       'studentId': 'U1710010',
       'email': 'ozod.tagoev@gmail.com',
       'major': 'CSE'
+    },
+    {
+      'firstName': 'Shoxrux',
+      'lastName': 'Abdunazarov',
+      'studentId': 'U1710056',
+      'email': 'shoxrux@gmail.com',
+      'major': 'ICE'
+    },
+    {
+      'firstName': 'Dilshod',
+      'lastName': 'Sayfiyev',
+      'studentId': 'U1710010',
+      'email': 'dilshod@gmail.com',
+      'major': 'SOL'
+    },
+    {
+      'firstName': 'Komron',
+      'lastName': 'Khodjaev',
+      'studentId': 'U1710036',
+      'email': 'komron.khodjaev@gmail.com',
+      'major': 'CSE'
+    },
+    {
+      'firstName': 'Karim',
+      'lastName': 'Pardaev',
+      'studentId': 'U1710042',
+      'email': 'karim@gmail.com',
+      'major': 'CSE'
+    },
+    {
+      'firstName': 'Azamat',
+      'lastName': 'Vahobov',
+      'studentId': 'U1710265',
+      'email': 'azamat.vahobov@gmail.com',
+      'major': 'CSE'
+    },
+    {
+      'firstName': 'Enver',
+      'lastName': 'Menadjiev',
+      'studentId': 'U1710019',
+      'email': 'enver@gmail.com',
+      'major': 'ICE'
+    },
+    {
+      'firstName': 'Rashid',
+      'lastName': 'Ismoilov',
+      'studentId': 'U1710058',
+      'email': 'rashidshax@gmail.com',
+      'major': 'ICE'
+    },
+    {
+      'firstName': 'Khurshid',
+      'lastName': 'Normurodov',
+      'studentId': 'U1710055',
+      'email': 'khur.uzb.normurodov@gmail.com',
+      'major': 'ICE'
+    },
+    {
+      'firstName': 'Dilshod',
+      'lastName': 'Bakhtiyorov',
+      'studentId': 'U1710016',
+      'email': 'dilshod.bakht@gmail.com',
+      'major': 'CSE'
+    },
+    {
+      'firstName': 'Jamshid',
+      'lastName': 'Abdusodikov',
+      'studentId': 'U1710017',
+      'email': 'jamshid@gmail.com',
+      'major': 'CSE'
+    },
+    {
+      'firstName': 'Javoxir',
+      'lastName': 'Nazarov',
+      'studentId': 'U1710001',
+      'email': 'javoxir@gmail.com',
+      'major': 'CSE'
+    },
+    {
+      'firstName': 'Elbek',
+      'lastName': 'Shaykulov',
+      'studentId': 'U1710040',
+      'email': 'elbek@gmail.com',
+      'major': 'ICE'
+    },
+    {
+      'firstName': 'Abror',
+      'lastName': 'Abduvahobov',
+      'studentId': 'U1710025',
+      'email': 'abror@gmail.com',
+      'major': 'SOL'
+    },
+    {
+      'firstName': 'Abdurohman',
+      'lastName': 'Abullaev',
+      'studentId': 'U1710022',
+      'email': 'abdullaev@gmail.com',
+      'major': 'CSE'
+    },
+    {
+      'firstName': 'Ulugbek',
+      'lastName': 'Isroilov',
+      'studentId': 'U1710057',
+      'email': 'ulugbek@gmail.com',
+      'major': 'CSE'
+    },
+    {
+      'firstName': 'Temur',
+      'lastName': 'Mannonov',
+      'studentId': 'U17100266',
+      'email': 'mannonov.temur@gmail.com',
+      'major': 'ICE'
     }
   ];
 

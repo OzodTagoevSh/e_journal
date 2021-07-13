@@ -76,30 +76,6 @@ class SubjectInfo extends StatelessWidget {
           ],
         ),
       ),
-
-          /*Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text('Choose the students table or grades in order to see the students list and their grades:',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.green, fontSize: 20.0, fontWeight: FontWeight.w600),
-            ),
-          ),
-          Divider(height: 30,color: Colors.red,),
-          Subject(subject: 'Algebra'),
-          Subject(subject: 'Physics'),
-          Subject(subject: 'Biology'),
-          Subject(subject: 'Mother Tongue'),
-          Subject(subject: 'History'),
-          Subject(subject: 'English'),
-          Subject(subject: 'Geometry'),
-          Subject(subject: 'Geography'),
-          Subject(subject: 'Literature'),
-          Subject(subject: 'Informatics'),
-          Subject(subject: 'Economics'),
-          Subject(subject: 'Chemistry'),
-        ],
-
-           */
     );
   }
 }

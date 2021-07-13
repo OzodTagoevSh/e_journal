@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_journal/pages/home.dart';
 import 'package:e_journal/pages/remove_student.dart';
+import 'package:e_journal/pages/retrieve_student.dart';
 import 'package:e_journal/student/student.dart';
 import 'package:e_journal/student/student_info.dart';
 import 'package:e_journal/pages/add_student.dart';
@@ -54,7 +56,7 @@ class _StudentTableState extends State<StudentTable> {
         Container(
           child: HorizontalDataTable(
             leftHandSideColumnWidth: 60,
-            rightHandSideColumnWidth: 608,
+            rightHandSideColumnWidth: 748,
             isFixedHeader: true,
             headerWidgets: _getTitleWidget(),
             leftSideItemBuilder: _generateFirstColumnRow,
@@ -79,13 +81,27 @@ class _StudentTableState extends State<StudentTable> {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => AddStudent()));
             },
-            child: const Icon(Icons.add),
+            child: const Text('C'),
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
             ),
           ),
           alignment: Alignment.bottomRight,
-          margin: const EdgeInsets.only(right: 30.0, bottom: 60.0),
+          margin: const EdgeInsets.only(right: 30.0, bottom: 130.0),
+        ),
+
+        Container(
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const RetrieveStudent()));
+            },
+            child: const Text('R'),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+            ),
+          ),
+          alignment: Alignment.bottomRight,
+          margin: const EdgeInsets.only(right: 30.0, bottom: 90.0),
         ),
 
         Container(
@@ -93,13 +109,27 @@ class _StudentTableState extends State<StudentTable> {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => const RemoveStudent()));
             },
-            child: const Icon(Icons.remove),
+            child: const Text('U'),
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
             ),
           ),
           alignment: Alignment.bottomRight,
-          margin: const EdgeInsets.only(right: 30.0, bottom: 20.0),
+          margin: const EdgeInsets.only(right: 30.0, bottom: 50.0),
+        ),
+
+        Container(
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => RemoveStudent()));
+            },
+            child: const Text('D'),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+            ),
+          ),
+          alignment: Alignment.bottomRight,
+          margin: const EdgeInsets.only(right: 30.0, bottom: 10.0),
         ),
       ],
     );
@@ -122,13 +152,13 @@ class _StudentTableState extends State<StudentTable> {
         child: _getTitleItemWidget('№' + (sortType == sortName ? (isAscending ? '  ↓' : '  ↑') : ''),
             60,Colors.pink),
       ),
-      _getTitleItemWidget('First Name', 100,Colors.red),
+      _getTitleItemWidget('First Name', 120,Colors.red),
       Container(width: 2,height: 56,color: Colors.white,),
-      _getTitleItemWidget('Last Name', 100,Colors.red),
+      _getTitleItemWidget('Last Name', 120,Colors.red),
       Container(width: 2,height: 56,color: Colors.white,),
       _getTitleItemWidget('Student ID', 100,Colors.red),
       Container(width: 2,height: 56,color: Colors.white,),
-      _getTitleItemWidget('Email', 200,Colors.red),
+      _getTitleItemWidget('Email', 300,Colors.red),
       Container(width: 2,height: 56,color: Colors.white,),
       _getTitleItemWidget('Major', 100,Colors.red),
     ];
@@ -164,25 +194,17 @@ class _StudentTableState extends State<StudentTable> {
   Widget _generateRightHandSideColumnRow(BuildContext context, int index) {
     return Row(
       children: <Widget>[
-        ElevatedButton(
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-            fixedSize: MaterialStateProperty.all(const Size(100, 56)),
-          ),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => StudentInfo(
-                firstName: user.userInfo[index].firstName,
-                lastName: user.userInfo[index].lastName,
-                studentId: user.userInfo[index].studentId,
-                email: user.userInfo[index].email,
-                major: user.userInfo[index].major)));
-          },
-          child: Text(user.userInfo[index].firstName,style: const TextStyle(fontSize: 15, color: Colors.black),),
+        Container(
+          child: Text(user.userInfo[index].firstName,style: const TextStyle(fontSize: 18),),
+          width: 120,
+          height: 56,
+          padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
+          alignment: Alignment.center,
         ),
         Container(width: 2,height: 56,color: Colors.blueGrey,),
         Container(
           child: Text(user.userInfo[index].lastName,style: const TextStyle(fontSize: 18),),
-          width: 100,
+          width: 120,
           height: 56,
           padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
           alignment: Alignment.center,
@@ -199,7 +221,7 @@ class _StudentTableState extends State<StudentTable> {
 
         Container(
           child: Text(user.userInfo[index].email,style: const TextStyle(fontSize: 18),),
-          width: 200,
+          width: 300,
           height: 56,
           padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
           alignment: Alignment.center,

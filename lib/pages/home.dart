@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
         children: [
           const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text('Choose the students table or grades in order to see the students list and their grades:',
+            child: Text('Choose the students table or subjects in order to see the students list and their grades according to the subject:',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.green, fontSize: 20.0, fontWeight: FontWeight.w600),
             ),
@@ -51,7 +51,7 @@ class _HomeState extends State<Home> {
                 onPressed: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const SubjectInfo()));
                 },
-                child: const Text('Grades', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),)),
+                child: const Text('Subjects', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),)),
           ),
         ],
       ),
